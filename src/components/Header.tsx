@@ -19,7 +19,7 @@ const nav = [
         icon: GraduationCap,
       },
       {
-        href: "http://localhost:3000",
+        href: "/careers",
         label: "Careers",
         description: "Explore opportunities to join our growing team.",
         icon: Briefcase,

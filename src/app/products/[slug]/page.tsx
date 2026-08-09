@@ -13,6 +13,8 @@ import {
 } from "lucide-react";
 
 import { company, products } from "@/lib/data";
+import { PageBackdrop } from "@/components/PageBackdrop";
+import { absoluteUrl } from "@/lib/seo";
 
 type Params = {
   slug: string;
@@ -48,7 +50,7 @@ export async function generateMetadata({
     openGraph: {
       title: `${product.name} | ${company.name}`,
       description: product.description,
-      url: `https://www.mugavai.co/products/${product.slug}`,
+      url: absoluteUrl(`/products/${product.slug}`),
     },
   };
 }
@@ -94,17 +96,7 @@ export default async function ProductPage({
 
       <section className="relative overflow-hidden bg-white">
 
-        {/* Background */}
-
-        <div className="absolute inset-0">
-
-          <div className="absolute left-0 top-0 h-[500px] w-[500px] rounded-full bg-pink-300/20 blur-[140px]" />
-
-          <div className="absolute right-0 top-20 h-[450px] w-[450px] rounded-full bg-blue-300/20 blur-[140px]" />
-
-          <div className="absolute bottom-0 left-1/2 h-[350px] w-[350px] -translate-x-1/2 rounded-full bg-purple-300/20 blur-[140px]" />
-
-        </div>
+        <PageBackdrop />
 
         <div className="relative mx-auto max-w-7xl px-6 pt-24 pb-28">
 

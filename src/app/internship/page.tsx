@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import type { Metadata } from "next";
 import {
   Rocket,
   GraduationCap,
@@ -8,6 +9,18 @@ import {
   Users,
   BookOpen,
 } from "lucide-react";
+import { CtaButtons } from "@/components/CtaButtons";
+import { FeatureCard } from "@/components/FeatureCard";
+import { PageBackdrop } from "@/components/PageBackdrop";
+
+export const metadata: Metadata = {
+  title: "Internship Program",
+  description:
+    "Build practical software engineering experience through Mugavai's internship program, mentorship, and real-world projects.",
+  alternates: {
+    canonical: "/internship",
+  },
+};
 
 const differentiators = [
   {
@@ -106,16 +119,7 @@ const photos = {
 export default function InternshipPage() {
   return (
     <main className="bg-white text-gray-900">
-      {/* Background */}
-      <div className="absolute inset-0 overflow-hidden">
-
-        <div className="absolute left-0 top-0 h-[500px] w-[500px] rounded-full bg-pink-300/20 blur-[140px]" />
-
-        <div className="absolute right-0 top-20 h-[450px] w-[450px] rounded-full bg-blue-300/20 blur-[140px]" />
-
-        <div className="absolute bottom-0 left-1/2 h-[350px] w-[350px] -translate-x-1/2 rounded-full bg-purple-300/20 blur-[140px]" />
-
-      </div>
+      <PageBackdrop />
       {/* Hero */}
       <section className="mx-auto max-w-7xl px-6 py-20 lg:py-28">
         <div className="grid items-center gap-14 lg:grid-cols-2">
@@ -135,21 +139,13 @@ export default function InternshipPage() {
               prepare yourself for a successful career in the software industry.
             </p>
 
-            <div className="mt-8 flex flex-wrap gap-4">
-              <Link
-                href="/jobs"
-                className="rounded-lg bg-black px-6 py-3 font-medium text-white transition hover:bg-gray-800"
-              >
-                View Open Positions
-              </Link>
-
-              <Link
-                href="/contact"
-                className="rounded-lg border border-gray-300 px-6 py-3 font-medium transition hover:bg-gray-100"
-              >
-                Contact Us
-              </Link>
-            </div>
+            <CtaButtons
+              className="mt-8"
+              items={[
+                { href: "/jobs", label: "View Open Positions" },
+                { href: "/contact", label: "Contact Us", variant: "secondary" },
+              ]}
+            />
           </div>
 
           <div className="relative aspect-[4/3] overflow-hidden rounded-3xl shadow-xl">
@@ -213,27 +209,15 @@ export default function InternshipPage() {
           </div>
 
           <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {differentiators.map((item) => {
-              const Icon = item.icon;
-              return (
-                <div
-                  key={item.title}
-                  className="rounded-2xl border border-gray-100 bg-white p-8 shadow-sm transition duration-300 hover:-translate-y-2 hover:shadow-xl"
-                >
-                  <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-pink-100 shadow-lg transition-transform duration-300 group-hover:scale-110">
-                    <Icon className="h-8 w-8 text-pink-600" />
-                  </div>
-
-                  <h3 className="mt-6 text-xl font-semibold">
-                    {item.title}
-                  </h3>
-
-                  <p className="mt-4 leading-7 text-gray-600">
-                    {item.description}
-                  </p>
-                </div>
-              )
-            })}
+            {differentiators.map((item) => (
+              <FeatureCard
+                key={item.title}
+                icon={item.icon}
+                title={item.title}
+                description={item.description}
+                compact
+              />
+            ))}
           </div>
         </div>
       </section>

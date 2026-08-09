@@ -70,3 +70,39 @@ export const company = {
     twitter: "https://twitter.com/mugavai",
   },
 };
+
+export type Job = {
+  id: string;
+  title: string;
+  location: string;
+  type: "Full-Time" | "Part-Time" | "Contract";
+  workMode: "On-Site" | "Remote" | "Hybrid";
+};
+
+export const jobs: Job[] = [
+  {
+    id: "24c2f0e8-ac88-46e5-8333-e54b8a444587",
+    title: "Social Media Marketer",
+    location: "Ramanathapuram, Tamil Nadu, India",
+    type: "Full-Time",
+    workMode: "Remote"
+  },
+  {
+    id: "1b2c3d4e-5f6a-7b8c-9d0e-1f2a3b4c5d6e",
+    title: "Software Engineer",
+    location: "Ramanathapuram, Tamil Nadu, India",
+    type: "Full-Time",
+    workMode: "Hybrid"
+  },
+  {
+    id: "6e5d4c3b-2a1f-9e8d-7c6b-5a4f3e2d1c0b",
+    title: "Talent Acquisition",
+    location: "Ramanathapuram, Tamil Nadu, India",
+    type: "Full-Time",
+    workMode: "On-Site"
+  }
+];
+
+export function getJobById(id: string): Job | undefined {
+  return jobs.find((job) => job.id === id);
+}

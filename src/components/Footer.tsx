@@ -79,7 +79,11 @@ export function Footer() {
                   Products
                 </Link>
               </li>
-
+              <li>
+                <Link href="/internship" className="hover:text-pink-600">
+                  Internship
+                </Link>
+              </li>
               <li>
                 <Link href="/careers" className="hover:text-pink-600">
                   Careers
@@ -112,13 +116,6 @@ export function Footer() {
                   Terms & Conditions
                 </Link>
               </li>
-
-              <li>
-                <Link href="/internship" className="hover:text-pink-600">
-                  Internship
-                </Link>
-              </li>
-
               <li>
                 <Link href="/contact" className="hover:text-pink-600">
                   Support

@@ -10,6 +10,10 @@ import {
   Sparkles,
 } from "lucide-react";
 import { RibbonDivider } from "@/components/Ribbon";
+import { CtaButtons } from "@/components/CtaButtons";
+import { FeatureCard } from "@/components/FeatureCard";
+import { PageBackdrop } from "@/components/PageBackdrop";
+import { StatCard } from "@/components/StatCard";
 import { company } from "@/lib/data";
 
 export const metadata: Metadata = {
@@ -50,17 +54,7 @@ export default function AboutPage() {
 
       <section className="relative overflow-hidden bg-white px-6 pt-24 pb-24">
 
-        {/* Background */}
-
-        <div className="absolute inset-0">
-
-          <div className="absolute left-0 top-0 h-[500px] w-[500px] rounded-full bg-pink-300/20 blur-[140px]" />
-
-          <div className="absolute right-0 top-20 h-[450px] w-[450px] rounded-full bg-blue-300/20 blur-[140px]" />
-
-          <div className="absolute bottom-0 left-1/2 h-[350px] w-[350px] -translate-x-1/2 rounded-full bg-purple-300/20 blur-[140px]" />
-
-        </div>
+        <PageBackdrop />
 
         <div className="mx-auto max-w-7xl">
 
@@ -87,22 +81,13 @@ export default function AboutPage() {
                 simplify collaboration and scale confidently in the digital era.
               </p>
 
-              <div className="mt-10 flex flex-wrap gap-4">
-                <Link
-                  href="/products"
-                  className="rounded-lg bg-black px-6 py-3 font-medium text-white transition hover:bg-gray-800"
-                >
-                  Explore Products
-                </Link>
-
-                <Link
-                  href="/contact"
-                  className="rounded-lg border border-gray-300 px-6 py-3 font-medium transition hover:bg-gray-100"
-                >
-                  Contact Us
-                </Link>
-
-              </div>
+              <CtaButtons
+                className="mt-10"
+                items={[
+                  { href: "/products", label: "Explore Products" },
+                  { href: "/contact", label: "Contact Us", variant: "secondary" },
+                ]}
+              />
 
             </div>
 
@@ -114,28 +99,9 @@ export default function AboutPage() {
 
                 <div className="grid grid-cols-2 gap-6">
 
-                  {stats.map((item) => {
-                    const Icon = item.icon;
-
-                    return (
-                      <div
-                        key={item.label}
-                        className="rounded-2xl border border-gray-100  p-6 transition duration-300 hover:-translate-y-2 hover:shadow-lg"
-                      >
-                        <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-pink-100 aspect-square ">
-                          <Icon className="h-6 w-6 text-pink-600" />
-                        </div>
-
-                        <p className="mt-5 text-sm text-gray-500">
-                          {item.label}
-                        </p>
-
-                        <p className="mt-2 text-2xl font-bold text-gray-900">
-                          {item.value}
-                        </p>
-                      </div>
-                    );
-                  })}
+                  {stats.map((item) => (
+                    <StatCard key={item.label} {...item} />
+                  ))}
 
                 </div>
 
@@ -307,28 +273,14 @@ export default function AboutPage() {
                 body:
                   "Enterprise-grade security, scalability and dependable performance.",
               },
-            ].map((item) => {
-              const Icon = item.icon;
-
-              return (
-                <div
-                  key={item.title}
-                  className="group rounded-3xl border border-gray-200 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-3 hover:shadow-2xl"
-                >
-                  <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-pink-100 shadow-lg transition-transform duration-300 group-hover:scale-110">
-                    <Icon className="h-8 w-8 text-pink-600" />
-                  </div>
-
-                  <h3 className="mt-8 text-2xl font-bold text-gray-900">
-                    {item.title}
-                  </h3>
-
-                  <p className="mt-4 leading-8 text-gray-600">
-                    {item.body}
-                  </p>
-                </div>
-              );
-            })}
+            ].map((item) => (
+              <FeatureCard
+                key={item.title}
+                icon={item.icon}
+                title={item.title}
+                description={item.body}
+              />
+            ))}
 
           </div>
 

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Factory, GraduationCap, Headset, HeartPulse, Hotel, Landmark, Layers3, ShieldCheck, ShoppingBag, Workflow } from "lucide-react";
 import { RibbonDivider } from "@/components/Ribbon";
+import { PageBackdrop } from "@/components/PageBackdrop";
 
 export default function Home() {
   return (
@@ -9,17 +10,7 @@ export default function Home() {
 
       <section className="relative overflow-hidden px-6 pt-28 pb-28">
 
-        {/* Background */}
-
-        <div className="absolute inset-0">
-
-          <div className="absolute left-0 top-0 h-[500px] w-[500px] rounded-full bg-pink-300/20 blur-[140px]" />
-
-          <div className="absolute right-0 top-20 h-[450px] w-[450px] rounded-full bg-blue-300/20 blur-[140px]" />
-
-          <div className="absolute bottom-0 left-1/2 h-[350px] w-[350px] -translate-x-1/2 rounded-full bg-purple-300/20 blur-[140px]" />
-
-        </div>
+        <PageBackdrop />
 
         <div className="relative mx-auto max-w-7xl">
 

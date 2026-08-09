@@ -11,6 +11,7 @@ import {
   MessageSquare,
 } from "lucide-react";
 import { company } from "@/lib/data";
+import { ContactInfoCard } from "@/components/ContactInfoCard";
 import { useState } from "react";
 
 // export const metadata: Metadata = {
@@ -206,31 +207,9 @@ export default function ContactPage() {
 
           <div className="space-y-5 lg:col-span-4">
 
-            {contactInfo.map((item) => {
-              const Icon = item.icon;
-
-              return (
-                <a
-                  key={item.title}
-                  href={item.href}
-                  className="flex items-center justify-start gap-4 rounded-3xl border border-gray-200 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-pink-200 hover:shadow-lg"
-                >
-
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-pink-100 aspect-square ">
-                    <Icon className="h-6 w-6 text-pink-600" />
-                  </div>
-
-
-                  <div className=""> <p className="mt-2 text-sm text-gray-500">
-                    {item.description}
-                  </p>
-
-                    <p className="mt-5 font-medium text-pink-600 break-words">
-                      {item.value}
-                    </p></div>
-                </a>
-              );
-            })}
+            {contactInfo.map((item) => (
+              <ContactInfoCard key={item.title} {...item} />
+            ))}
 
           </div>
 

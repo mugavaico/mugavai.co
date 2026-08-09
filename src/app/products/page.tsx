@@ -1,12 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import {
-  ArrowUpRight,
-  Sparkles,
-  Boxes,
-  ShieldCheck,
-} from "lucide-react";
+import { ArrowUpRight, Sparkles, Boxes, ShieldCheck } from "lucide-react";
 import { products, company } from "@/lib/data";
+import { PageBackdrop } from "@/components/PageBackdrop";
+import { ProductCard } from "@/components/ProductCard";
+import { SectionHeading } from "@/components/SectionHeading";
 
 export const metadata: Metadata = {
   title: "Products",
@@ -19,39 +17,16 @@ export const metadata: Metadata = {
 export default function ProductsPage() {
   return (
     <section className="relative overflow-hidden bg-white">
-      {/* Background */}
-      <div className="absolute inset-0">
-
-        <div className="absolute left-0 top-0 h-[500px] w-[500px] rounded-full bg-pink-300/20 blur-[140px]" />
-
-        <div className="absolute right-0 top-20 h-[450px] w-[450px] rounded-full bg-blue-300/20 blur-[140px]" />
-
-        <div className="absolute bottom-0 left-1/2 h-[350px] w-[350px] -translate-x-1/2 rounded-full bg-purple-300/20 blur-[140px]" />
-
-      </div>
+      <PageBackdrop />
 
       <div className="mx-auto max-w-7xl px-6 py-24">
-        {/* Header */}
-
-        <div className="mx-auto max-w-3xl text-center">
-          <div className="inline-flex items-center rounded-full border  border-pink-200 bg-pink-50 px-4 py-2 text-xs font-semibold uppercase tracking-[0.25em] text-pink-700">
-            Enterprise SaaS Products
-          </div>
-
-          <h1 className="mt-8 text-5xl font-bold tracking-tight text-gray-900 md:text-7xl">
-            Products that work
-            <br />
-            <span className="bg-linear-to-r from-pink-600 via-purple-600 to-blue-600 bg-clip-text text-transparent">
-              better together.
-            </span>
-          </h1>
-
-          <p className="mx-auto mt-8 max-w-2xl text-lg leading-8 text-gray-600">
-            Discover the complete {company.name} platform designed to simplify
-            enterprise operations, automate workflows, and help teams move
-            faster.
-          </p>
-        </div>
+        <SectionHeading
+          eyebrow="Enterprise SaaS Products"
+          title="Products that work"
+          accent="better together."
+          description={`Discover the complete ${company.name} platform designed to simplify enterprise operations, automate workflows, and help teams move faster.`}
+          className="pt-4"
+        />
 
         {/* Stats */}
 
@@ -85,76 +60,7 @@ export default function ProductsPage() {
 
         <div className="mt-24 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
           {products.map((product) => (
-            <Link
-              key={product.slug}
-              href={`/products/${product.slug}`}
-              className="group relative overflow-hidden rounded-3xl border border-gray-200 bg-white/80 p-8 shadow-sm backdrop-blur transition-all duration-300 hover:-translate-y-2 hover:border-transparent hover:shadow-2xl"
-            >
-              {/* Gradient */}
-              <div
-                className="absolute inset-x-0 top-0 h-1"
-                style={{
-                  background: `linear-gradient(to right, ${product.color}, transparent)`,
-                }}
-              />
-
-              {/* Glow */}
-              <div
-                className="absolute -right-10 -top-10 h-36 w-36 rounded-full opacity-20 blur-3xl transition-opacity duration-300 group-hover:opacity-50"
-                style={{
-                  background: product.color,
-                }}
-              />
-
-              <div className="relative">
-                <span
-                  className="inline-flex rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-widest"
-                  style={{
-                    backgroundColor: `${product.color}15`,
-                    color: product.color,
-                  }}
-                >
-                  {product.category}
-                </span>
-
-                <h2 className="mt-6 text-3xl font-bold text-gray-900">
-                  {product.name}
-                </h2>
-
-                <p className="mt-5 leading-7 text-gray-600">
-                  {product.tagline}
-                </p>
-
-                {product.description && (
-                  <p className="mt-4 line-clamp-3 text-sm leading-7 text-gray-500">
-                    {product.description}
-                  </p>
-                )}
-
-                <div className="mt-10 flex items-center justify-between">
-                  <span
-                    className="font-semibold"
-                    style={{ color: product.color }}
-                  >
-                    Explore Product
-                  </span>
-
-                  <div
-                    className="flex h-11 w-11 items-center justify-center rounded-full transition-transform duration-300 group-hover:rotate-45"
-                    style={{
-                      backgroundColor: `${product.color}20`,
-                    }}
-                  >
-                    <ArrowUpRight
-                      size={20}
-                      style={{
-                        color: product.color,
-                      }}
-                    />
-                  </div>
-                </div>
-              </div>
-            </Link>
+            <ProductCard key={product.slug} product={product} />
           ))}
         </div>
 

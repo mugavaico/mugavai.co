@@ -2,9 +2,8 @@ import type { Metadata } from "next";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { company } from "@/lib/data";
+import { absoluteUrl, siteUrl } from "@/lib/seo";
 import "./globals.css";
-
-const siteUrl = "https://www.mugavai.co";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -36,20 +35,11 @@ export const metadata: Metadata = {
     siteName: company.name,
     title: `${company.name} | Enterprise Software & B2B SaaS Suite`,
     description: company.shortDescription,
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: `${company.name} — Enterprise Software & B2B SaaS Suite`,
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
     title: `${company.name} | Enterprise Software & B2B SaaS Suite`,
     description: company.shortDescription,
-    images: ["/og-image.png"],
   },
   robots: {
     index: true,
@@ -62,7 +52,7 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: "/favicon.ico",
+    icon: "/mugavai.png",
   },
 };
 
@@ -77,14 +67,16 @@ export default function RootLayout({
     name: company.legalName,
     alternateName: company.name,
     url: siteUrl,
-    logo: `${siteUrl}/logo.png`,
+    logo: absoluteUrl("/mugavai.png"),
     foundingDate: company.founded,
     email: company.email,
     address: {
       "@type": "PostalAddress",
       streetAddress: company.address,
-      addressLocality: "London",
-      addressCountry: "GB",
+      addressLocality: "Ramanathapuram",
+      addressRegion: "Tamil Nadu",
+      postalCode: "623501",
+      addressCountry: "IN",
     },
     sameAs: [company.social.linkedin, company.social.twitter],
   };
