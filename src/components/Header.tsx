@@ -1,40 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Building2, GraduationCap, Briefcase, ChevronDown } from "lucide-react";
+import { MobileNav } from "@/components/MobileNav";
+import { navigation } from "@/lib/navigation";
 
-const nav = [
-  {
-    label: "Company",
-    children: [
-      {
-        href: "/about",
-        label: "About Us",
-        description: "Learn about Mugavai and our mission.",
-        icon: Building2,
-      },
-      {
-        href: "/internship",
-        label: "Internship",
-        description: "Kick-start your career with our internship program.",
-        icon: GraduationCap,
-      },
-      {
-        href: "/careers",
-        label: "Careers",
-        description: "Explore opportunities to join our growing team.",
-        icon: Briefcase,
-      },
-    ],
-  },
-  {
-    href: "/products",
-    label: "Products",
-  },
-  {
-    href: "/contact",
-    label: "Contact",
-  },
-];
+const icons = {
+  building: Building2,
+  graduation: GraduationCap,
+  briefcase: Briefcase,
+};
 
 export function Header() {
   return (
@@ -55,9 +29,9 @@ export function Header() {
           />
         </Link>
 
-        {/* Navigation */}
+        {/* Desktop navigation */}
         <nav className="ml-auto hidden items-center gap-2 lg:flex">
-          {nav.map((item) => {
+          {navigation.map((item) => {
             if ("children" in item) {
               return (
                 <div
@@ -74,7 +48,7 @@ export function Header() {
                   <div className="invisible absolute left-0 top-full mt-3 w-96 rounded-3xl border border-gray-200 bg-white p-3 opacity-0 shadow-2xl transition-all duration-300 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
 
                     {item.children?.map((child) => {
-                      const Icon = child.icon;
+                      const Icon = icons[child.icon];
 
                       return (
                         <Link
@@ -121,6 +95,8 @@ export function Header() {
             Join Us
           </Link>
         </nav>
+
+        <MobileNav navigation={navigation} />
       </div>
     </header>
   );

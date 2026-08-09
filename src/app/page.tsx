@@ -37,7 +37,7 @@ export default function Home() {
               </h1>
 
               <p className="mt-8 max-w-xl text-lg leading-8 text-gray-600">
-                Mugavai helps organizations automate business processes,
+                Mugavai.co helps organizations automate business processes,
                 improve productivity and build enterprise-grade digital
                 solutions from a single platform.
               </p>
@@ -97,7 +97,7 @@ export default function Home() {
                 <div className="rounded-3xl bg-linear-to-r from-pink-600 to-purple-600 p-8 text-white">
 
                   <h3 className="text-3xl font-bold">
-                    Mugavai Platform
+                    Mugavai.co Platform
                   </h3>
 
                   <p className="mt-4 text-purple-100">
@@ -189,7 +189,7 @@ export default function Home() {
           <div className="text-center">
 
             <span className="inline-flex items-center rounded-full border border-pink-200 bg-pink-50  px-4 py-2 text-xs font-semibold uppercase tracking-[0.25em] text-pink-700">
-              Why Mugavai
+              Why Mugavai.co
             </span>
 
             <h2 className="mt-6 text-4xl font-bold text-gray-900 md:text-5xl">
@@ -349,7 +349,7 @@ export default function Home() {
                 </span>
 
                 <h3 className="mt-8 text-4xl font-bold text-gray-900">
-                  Mugavai Enterprise Suite
+                  Mugavai.co Enterprise Suite
                 </h3>
 
                 <p className="mt-6 text-lg leading-8 text-gray-600">

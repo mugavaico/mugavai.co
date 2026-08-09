@@ -156,13 +156,6 @@ export function Footer() {
             © {new Date().getFullYear()} {company.legalName}. All rights
             reserved.
           </p>
-
-          <p>
-            Designed and developed by{" "}
-            <span className="font-semibold text-gray-900">
-              Mugavai Technologies
-            </span>
-          </p>
         </div>
       </div>
     </footer>

@@ -65,7 +65,7 @@ export default function AboutPage() {
             <div className="relative">
 
               <span className="inline-flex items-center rounded-full border  border-pink-200 bg-pink-50 px-4 py-2 text-xs font-semibold uppercase tracking-[0.25em] text-pink-700">
-                About Mugavai
+                About Mugavai.co
               </span>
 
               <h1 className="mt-8 text-5xl font-bold leading-tight tracking-tight text-gray-900 md:text-6xl">
@@ -157,11 +157,11 @@ export default function AboutPage() {
             </span>
 
             <h2 className="mt-5 text-4xl font-bold text-gray-900">
-              Why we started Mugavai
+              Why we started Mugavai.co
             </h2>
 
             <p className="mt-6 text-lg leading-8 text-gray-600">
-              Mugavai was founded with a simple vision—to build enterprise
+              Mugavai.co was founded with a simple vision—to build enterprise
               software that is powerful, reliable and easy to use.
             </p>
 
@@ -299,7 +299,7 @@ export default function AboutPage() {
             <div>
 
               <span className="text-sm font-semibold uppercase tracking-[0.25em] text-purple-600">
-                Why Mugavai
+                Why Mugavai.co
               </span>
 
               <h2 className="mt-5 text-4xl font-bold text-gray-900">
@@ -359,7 +359,7 @@ export default function AboutPage() {
             </h2>
 
             <p className="mx-auto mt-6 max-w-2xl text-lg text-gray-600">
-              Behind every Mugavai product is a team of engineers, designers,
+              Behind every Mugavai.co product is a team of engineers, designers,
               product thinkers and customer champions committed to building
               software that businesses love to use.
             </p>
