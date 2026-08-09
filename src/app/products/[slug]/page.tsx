@@ -745,7 +745,7 @@ export default async function ProductPage({
             </h2>
 
             <p className="mt-6 text-lg leading-8 text-gray-300">
-              Whether you're managing thousands of employees,
+              Whether you&apos;re managing thousands of employees,
               millions of transactions or multiple business units,
               {` ${product.name}`} scales effortlessly.
             </p>
@@ -916,7 +916,7 @@ export default async function ProductPage({
                 </div>
 
                 <p className="text-lg leading-8 text-gray-700">
-                  "{item.quote}"
+                  &quot;{item.quote}&quot;
                 </p>
 
                 <div className="mt-10">

@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import {
-  ArrowRight,
   Building2,
   Calendar,
   Globe,
@@ -459,7 +458,7 @@ export default function AboutPage() {
         <div className="relative mx-auto max-w-5xl text-center text-black">
 
           <span className="rounded-full border border-white/30 px-4 py-2 text-xs font-semibold uppercase tracking-[0.25em]">
-            Let's Build Together
+            Let&apos;s Build Together
           </span>
 
           <h2 className="mt-8 text-5xl font-bold leading-tight md:text-6xl">
@@ -467,8 +466,8 @@ export default function AboutPage() {
           </h2>
 
           <p className="mx-auto mt-8 max-w-3xl text-lg leading-8 text-gray-500">
-            Whether you're looking for enterprise software, cloud solutions,
-            digital transformation or custom platforms, we'd love to hear from
+            Whether you&apos;re looking for enterprise software, cloud solutions,
+            digital transformation or custom platforms, we&apos;d love to hear from
             you.
           </p>
 

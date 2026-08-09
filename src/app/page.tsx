@@ -1,7 +1,6 @@
 import Link from "next/link";
-import { ArrowUpRight, Factory, GraduationCap, Headset, HeartPulse, Hotel, Landmark, Layers3, ShieldCheck, ShoppingBag, Workflow } from "lucide-react";
+import { Factory, GraduationCap, Headset, HeartPulse, Hotel, Landmark, Layers3, ShieldCheck, ShoppingBag, Workflow } from "lucide-react";
 import { RibbonDivider } from "@/components/Ribbon";
-import { company, products } from "@/lib/data";
 
 export default function Home() {
   return (
@@ -436,7 +435,7 @@ export default function Home() {
             </h2>
 
             <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-gray-600">
-              Whether you're a startup, enterprise or government organization,
+              Whether you&apos;re a startup, enterprise or government organization,
               Mugavai provides secure and scalable business software.
             </p>
 

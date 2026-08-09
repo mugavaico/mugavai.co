@@ -207,7 +207,7 @@ export default function InternshipPage() {
             </h2>
 
             <p className="mt-6 text-lg text-gray-600">
-              Our internship provides much more than classroom learning. You'll
+              Our internship provides much more than classroom learning. You&apos;ll
               work on real products while being guided by experienced mentors.
             </p>
           </div>

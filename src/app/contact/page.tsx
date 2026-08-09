@@ -1,6 +1,5 @@
 "use client";
 
-import type { Metadata } from "next";
 import {
   Mail,
   Phone,
@@ -58,7 +57,6 @@ export default function ContactPage() {
 
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [loading, setLoading] = useState(false);
-  const [success, setSuccess] = useState(false);
 
   const EMAIL_REGEX =
     /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -148,8 +146,6 @@ export default function ContactPage() {
 
       // Call API here
 
-      setSuccess(true);
-
       setForm({
         fullName: "",
         email: "",
@@ -185,7 +181,7 @@ export default function ContactPage() {
           </span>
 
           <h1 className="mt-8 text-5xl font-bold tracking-tight text-gray-900 md:text-6xl">
-            We'd love to hear
+            We&apos;d love to hear
             <span className="block bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent">
               from you.
             </span>
@@ -255,7 +251,7 @@ export default function ContactPage() {
                 </h2>
 
                 <p className="mt-1 text-gray-600">
-                  Fill in the form and we'll get back to you.
+                  Fill in the form and we&apos;ll get back to you.
                 </p>
 
               </div>

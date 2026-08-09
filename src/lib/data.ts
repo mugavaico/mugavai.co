@@ -59,6 +59,8 @@ export const company = {
     "Mugavai.co builds enterprise software and B2B SaaS solutions that help businesses streamline operations, improve productivity, and accelerate digital transformation.",
   founded: "2025",
   address: "Ramanathapuram,Tamil Nadu, India",
+  hq: "Ramanathapuram, Tamil Nadu, India",
+  devCenter: "Ramanathapuram, Tamil Nadu, India",
   email: "info@mugavai.co", // Replace with your actual business email
   phone: "+91 98765 43210", // Replace with your actual business number
   employees: "10+",
