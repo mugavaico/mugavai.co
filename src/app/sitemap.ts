@@ -1,6 +1,8 @@
 import type { MetadataRoute } from "next";
 import { products } from "@/lib/data";
 
+export const dynamic = "force-static";
+
 const siteUrl = "https://www.mugavai.co";
 
 export default function sitemap(): MetadataRoute.Sitemap {
