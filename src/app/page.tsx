@@ -271,11 +271,11 @@ export default function Home() {
 
             {[
               {
-                value: "500+",
+                value: "10+",
                 label: "Enterprise Customers",
               },
               {
-                value: "10+",
+                value: "4+",
                 label: "Business Products",
               },
               {
