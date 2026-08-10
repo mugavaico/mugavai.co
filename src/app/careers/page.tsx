@@ -101,7 +101,7 @@ export default function CareersPage() {
           {[
             {
               icon: Users,
-              title: "120+",
+              title: "10+",
               text: "Team Members",
             },
             {
