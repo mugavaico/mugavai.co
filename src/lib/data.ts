@@ -62,7 +62,7 @@ export const company = {
   hq: "Ramanathapuram, Tamil Nadu, India",
   devCenter: "Ramanathapuram, Tamil Nadu, India",
   email: "info@mugavai.co", // Replace with your actual business email
-  phone: "+91 98765 43210", // Replace with your actual business number
+  phone: "+91 4567 220136", // Replace with your actual business number
   employees: "10+",
   customers: "Growing",
   social: {
